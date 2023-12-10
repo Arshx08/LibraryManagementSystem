@@ -80,8 +80,8 @@
     </header>
 
     <nav>
-        <a href="#Login">Login</a>
 
+        
         <a asp-controller="Books" asp-action="Index">Books</a>
         <a asp-controller="Books" asp-action="Create"> Add Books</a>
         <a asp-controller="Member" asp-action="Index">Members</a>
@@ -115,6 +115,9 @@
         }
     </tbody>
 </table>
+        <div>
+            <a asp-action="Create">Add More</a>
+        </div>
     </section>
 
     <footer>
