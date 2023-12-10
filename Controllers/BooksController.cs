@@ -7,7 +7,7 @@ namespace LibraryManagementSystem.Controllers
     public class BooksController : Controller
     {
 
-        private LibraryContext _context = new LibraryContext();
+        private readonly LibraryContext _context;
 
         public BooksController(LibraryContext context)
         {

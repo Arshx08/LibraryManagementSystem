@@ -1,8 +1,12 @@
 using LibraryManagementSystem.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+builder.Services.AddDbContext<LibraryContext>(options =>
+        options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
 // Add services to the container.
