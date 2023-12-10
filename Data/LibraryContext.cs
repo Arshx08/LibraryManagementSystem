@@ -15,12 +15,6 @@ namespace LibraryManagementSystem.Data
 
       
 
-        /*
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlite("Filename=DB.db");
-        }
-        
-        */
+  
     }
 }

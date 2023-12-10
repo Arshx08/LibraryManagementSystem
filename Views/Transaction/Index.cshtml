@@ -1,7 +1,5 @@
-﻿@model Book
-
-@{
-    ViewData["Title"] = "Add New Book";
+﻿@{
+    ViewData["Title"] = "Transaction";
 }
 
 
@@ -10,12 +8,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library Management System - Add Books</title>
+    <title>Library Management System - Transactions List</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            background: url('Images/blurr.jpg') no-repeat center center fixed;
             padding: 0;
             background-color: #f4f4f4;
         }
@@ -72,11 +69,6 @@
             bottom: 0;
             width: 100%;
         }
-
-        .label-text {
-            font-size: 20px; /* Adjust the value based on your desired text size */
-        }
-
     </style>
 </head>
 <body>
@@ -87,45 +79,34 @@
 
     <nav>
         <a href="#Login">Login</a>
-
         <a asp-controller="Books" asp-action="Index">Books</a>
         <a asp-controller="Books" asp-action="Create"> Add Books</a>
         <a asp-controller="Member" asp-action="Index">Members</a>
         <a asp-controller="Transaction" asp-action="Index">Transactions</a>
-
+  
     </nav>
 
     <section>
+        <h2>Transaction </h2>
 
+        <ul class="book-list">
+            <li class="book-item">
+                <h3>Transaction 1</h3>
+                <p>Book: PHP</p>
+                <p>Customer: John</p>
+            </li>
+            <li class="book-item">
+                <h3>Transaction 2</h3>
+                <p>Book: Java 3</p>
+                <p>Customer: Mark</p>
+            </li>
+            <li class="book-item">
+                <h3>Transaction 3</h3>
+                <p>Book: Computer Science</p>
+                <p>Customer: Steve</p>
+            </li>
 
-        <h2 class="mt-3">Add New Book</h2>
-
-        <form asp-action="Create" class="mt-3">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-            <div class="form-group">
-                <label asp-for="Title" class="control-label label-text"></label>
-                <input asp-for="Title" class="form-control" required/>
-                <span asp-validation-for="Title" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="Author" class="control-label label-text"></label>
-                <input asp-for="Author" class="form-control" required/>
-                <span asp-validation-for="Author" class="text-danger"></span>
-            </div>
-
-            <div class="form-group d-flex justify-content-center label-text mb-3 mt-3">
-                <input type="submit" value="Create" class="btn btn-success" /> &nbsp;&nbsp;
-                <input type="reset" value="Reset" class="btn btn-secondary" />
-
-            </div>
-
-        </form>
-
-        <div>
-            <a asp-action="Index">Back to List</a>
-        </div>
+        </ul>
     </section>
 
     <footer>
@@ -134,17 +115,4 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
