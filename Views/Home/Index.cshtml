@@ -3,6 +3,12 @@
 }
 
 
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-success" role="alert">
+        @ViewBag.Message
+    </div>
+}
 
 <html lang="en">
 <head>
@@ -71,7 +77,7 @@
       
         <a asp-controller="Books" asp-action="Index">Books</a>
         <a asp-controller="Books" asp-action="Create"> Add Books</a>
-        <a asp-controller="Member" asp-action="Index">Members</a>
+        <a asp-controller="Users" asp-action="Index">Members</a>
         <a asp-controller="Transaction" asp-action="Index">Transactions</a>
       
     </nav>

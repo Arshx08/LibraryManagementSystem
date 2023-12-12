@@ -1,14 +1,11 @@
-﻿@{
-    ViewData["Title"] = "Transaction";
-}
-
+﻿@model List<User>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library Management System - Transactions List</title>
+    <title>Library Management System - Sign Up</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -76,37 +73,43 @@
     <header>
         <h1>Library Management System</h1>
     </header>
-
     <nav>
-       
+
         <a asp-controller="Books" asp-action="Index">Books</a>
         <a asp-controller="Books" asp-action="Create"> Add Books</a>
         <a asp-controller="Users" asp-action="Index">Members</a>
         <a asp-controller="Transaction" asp-action="Index">Transactions</a>
-  
+
     </nav>
 
+
     <section>
-        <h2>Transaction </h2>
 
-        <ul class="book-list">
-            <li class="book-item">
-                <h3>Transaction 1</h3>
-                <p>Book: PHP</p>
-                <p>Customer: John</p>
-            </li>
-            <li class="book-item">
-                <h3>Transaction 2</h3>
-                <p>Book: Java 3</p>
-                <p>Customer: Mark</p>
-            </li>
-            <li class="book-item">
-                <h3>Transaction 3</h3>
-                <p>Book: Computer Science</p>
-                <p>Customer: Steve</p>
-            </li>
+<h2>Members</h2>
 
-        </ul>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.FirstName</td>
+                <td>@user.LastName</td>
+                <td>@user.Email</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
     </section>
 
     <footer>
@@ -115,4 +118,3 @@
 
 </body>
 </html>
-

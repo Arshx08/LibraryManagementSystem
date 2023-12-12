@@ -15,6 +15,9 @@ namespace LibraryManagementSystem.Controllers
 
         public IActionResult Index()
         {
+            //Display message when user registers successfully
+            var message = TempData["Message"]?.ToString();
+            ViewBag.Message = message;
             return View();
         }
 

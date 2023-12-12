@@ -1,6 +1,4 @@
-﻿@{
-}
-
+﻿@model User
 
 <!DOCTYPE html>
 <html lang="en">
@@ -85,29 +83,28 @@
                     <div class="card">
                         <div class="card-body">
                             <h2 class="text-center">Sign Up</h2>
-                            <form>
+                            <form asp-action="SignUp" method="post">
                                 <div class="form-group">
-                                    <label for="fname">Firstname</label>
-                                    <input type="text" class="form-control" id="fname" name="fname" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="lname">Lastname</label>
-                                    <input type="text" class="form-control" id="lname" name="lname" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="email">Email:</label>
-                                    <input type="text" class="form-control" id="email" name="email" required>
+                                    <label asp-for="FirstName"></label>
+                                    <input asp-for="FirstName" class="form-control" required/>
+                                    <span asp-validation-for="FirstName" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
-                                    <label for="password">Password:</label>
-                                    <input type="password" class="form-control" id="password" name="password" required>
+                                    <label asp-for="LastName"></label>
+                                    <input asp-for="LastName" class="form-control" required/>
+                                    <span asp-validation-for="LastName" class="text-danger"></span>
                                 </div>
-                                <div class="form-group d-flex justify-content-center mb-3 mt-3">
-                                    <button type="submit" class="btn btn-success btn-block">Sign Up</button> &nbsp; &nbsp;
-                                    <button type="reset" class="btn btn-primary btn-block">Clear</button>
+                                <div class="form-group">
+                                    <label asp-for="Email"></label>
+                                    <input asp-for="Email" class="form-control" required />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
                                 </div>
+                                <div class="form-group">
+                                    <label asp-for="Password"></label>
+                                    <input asp-for="Password" type="password" class="form-control" required />
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+                                <button type="submit" class="btn btn-primary mb-3 mt-3">Sign Up</button>
                             </form>
                         </div>
                     </div>
